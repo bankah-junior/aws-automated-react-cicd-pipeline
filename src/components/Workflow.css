@@ -1,0 +1,178 @@
+.workflow {
+  background: linear-gradient(180deg, #1a1f3a 0%, #0a0e27 100%);
+  position: relative;
+}
+
+.workflow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(10, 14, 39, 0.8));
+  pointer-events: none;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.workflow-card {
+  background: linear-gradient(135deg, rgba(45, 52, 86, 0.4) 0%, rgba(29, 35, 59, 0.4) 100%);
+  border: 2px solid rgba(255, 153, 0, 0.3);
+  border-radius: 16px;
+  padding: 30px 24px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.workflow-card:nth-child(1) { animation-delay: 0.1s; }
+.workflow-card:nth-child(2) { animation-delay: 0.2s; }
+.workflow-card:nth-child(3) { animation-delay: 0.3s; }
+.workflow-card:nth-child(4) { animation-delay: 0.4s; }
+.workflow-card:nth-child(5) { animation-delay: 0.5s; }
+
+.workflow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 153, 0, 0.1) 0%, transparent 70%);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.workflow-card:hover {
+  border-color: var(--aws-orange);
+  background: linear-gradient(135deg, rgba(45, 52, 86, 0.8) 0%, rgba(29, 35, 59, 0.8) 100%);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(255, 153, 0, 0.2);
+}
+
+.workflow-card:hover::before {
+  opacity: 1;
+}
+
+.workflow-card.expanded {
+  border-color: var(--aws-orange);
+  background: linear-gradient(135deg, rgba(45, 52, 86, 0.9) 0%, rgba(29, 35, 59, 0.9) 100%);
+  box-shadow: 0 16px 32px rgba(255, 153, 0, 0.2);
+}
+
+.workflow-card-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--aws-orange);
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.workflow-card:hover .step-icon,
+.workflow-card.expanded .step-icon {
+  animation: none;
+  font-size: 3.5rem;
+}
+
+.workflow-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.step-details {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 16px;
+  animation: fadeInUp 0.3s ease-out;
+  max-height: 200px;
+}
+
+.workflow-connector {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(to right, var(--aws-orange), transparent);
+  opacity: 0.3;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workflow-card {
+    min-height: 240px;
+    padding: 24px 20px;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+  }
+
+  .step-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .workflow-card {
+    min-height: auto;
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .workflow-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-details {
+    font-size: 0.9rem;
+  }
+}

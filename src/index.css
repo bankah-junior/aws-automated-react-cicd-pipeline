@@ -1,0 +1,120 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #0a0e27;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --aws-orange: #ff9900;
+  --aws-orange-dark: #e68a00;
+  --primary-bg: #0a0e27;
+  --secondary-bg: #1a1f3a;
+  --tertiary-bg: #2d3456;
+  --text-primary: #ffffff;
+  --text-secondary: #b3bcc4;
+  --border-color: #3d4563;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--aws-orange);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--aws-orange-dark);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--aws-orange);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: var(--aws-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 153, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--aws-orange);
+  border: 2px solid var(--aws-orange);
+}
+
+.btn-secondary:hover {
+  background-color: var(--aws-orange);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
