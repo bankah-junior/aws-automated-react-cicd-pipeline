@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h1 className="hero-title">Automate Your CI/CD Pipeline</h1>
+          <h1 className="hero-title">Automate Your CI/CD Pipeline 🚀</h1>
           <p className="hero-subtitle">
             Streamline your development workflow with intelligent automation. Deploy faster, test smarter, and ship with confidence using AWS DevOps tools.
           </p>
