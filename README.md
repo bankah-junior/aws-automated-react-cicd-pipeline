@@ -2,6 +2,8 @@
 
 This project showcases an automated CI/CD pipeline for a modern React application built with Vite. It is designed to be highly portable, containerized, and ready for deployment on AWS.
 
+![Deployed Site](deployed-site.png)
+
 ## 🌟 Features
 
 - **Portability**: Fully containerized using Docker and Docker Compose.
@@ -79,6 +81,19 @@ The project name `aws-automated-cicd-pipeline` implies its purpose for cloud dep
 1. **Source**: GitHub/Bitbucket repository.
 2. **Build**: AWS CodeBuild uses the `Dockerfile` to create an image and push it to Amazon ECR.
 3. **Deploy**: AWS CodeDeploy or App Runner pulls the image from ECR and deploys it to ECS (Fargate) or an EC2 instance.
+
+### Pipeline Visualization
+
+Below are the stages of the automated CI/CD pipeline as configured in AWS:
+
+#### 1. Source Stage
+![Source Stage](aws-cicd-source.png)
+
+#### 2. Build Stage
+![Build Stage](aws-cicd-build.png.png)
+
+#### 3. Deploy Stage
+![Deploy Stage](aws-cicd-deploy.png.png)
 
 ---
 
